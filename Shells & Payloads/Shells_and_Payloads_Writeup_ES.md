@@ -194,7 +194,12 @@ Change the passwords soon..
 
 ## 2. Host-01 — Windows Server / Apache Tomcat (subida de WAR)
 
-**Objetivo de la pregunta oficial:** *"What is the hostname of Host-1?"* y *"Exploit the target and gain a shell session. Submit the name of the folder located in `C:\Shares\`"*.
+### Preguntas oficiales del Skills Assessment
+
+| # | Pregunta | Respuesta |
+|:-:|----------|-----------|
+| 1 | *What is the hostname of Host-1? (Format: all lower case)* | ✅ **`shells-winsvr`** — confirmado en el escaneo de versión de nmap (ver §2.1) |
+| 2 | *Exploit the target and gain a shell session. Submit the name of the folder located in `C:\Shares\` (Format: all lower case)* | ⚠️ No capturado — la sesión obtenida en Tomcat no llegó a explorar `C:\Shares\` en las capturas disponibles. Con la shell ya conseguida (§2.3), el siguiente paso sería `dir C:\Shares\` para listarlo |
 
 ### 2.1 Reconocimiento
 
@@ -299,6 +304,14 @@ Shell obtenida en Windows, ubicada en `C:\Program Files (x86)\Apache Software Fo
 ---
 
 ## 3. Host-02 — Linux / aplicación web vulnerable (RCE autenticado)
+
+### Preguntas oficiales del Skills Assessment
+
+| # | Pregunta | Respuesta |
+|:-:|----------|-----------|
+| 3 | *What distribution of Linux is running on Host-2? (Format: distro name, all lower case)* | ✅ **`ubuntu`** — confirmado en el escaneo de versión de nmap: `OpenSSH 8.2p1 Ubuntu` y `Apache/2.4.41 (Ubuntu)` (ver §3.1) |
+| 4 | *What language is the shell written in that gets uploaded when using the 50064.rb exploit?* | ✅ **PHP** — el módulo pertenece a la categoría `exploit/php/webapps/50064` de Metasploit y sube un fichero `.php` (`data/i/4wZL.php`, visible en el log de §3.3) |
+| 5 | *Exploit the blog site and establish a shell session with the target OS. Submit the contents of `/customscripts/flag.txt`* | ⚠️ No capturado — las capturas muestran `ls -la /customscripts/flag.txt` confirmando que el fichero existe, pero no se llegó a capturar su contenido con `cat /customscripts/flag.txt` (ver §3.3) |
 
 ### 3.1 Reconocimiento
 
@@ -427,6 +440,13 @@ ls -la /customscripts/flag.txt
 ---
 
 ## 4. Host-03 — Windows Server / EternalBlue (MS17-010)
+
+### Preguntas oficiales del Skills Assessment
+
+| # | Pregunta | Respuesta |
+|:-:|----------|-----------|
+| 6 | *What is the hostname of Host-3?* | ✅ **`SHELLS-WINBLUE`** — confirmado en el escaneo de versión de nmap (ver §4.1) |
+| 7 | *Exploit and gain a shell session with Host-3. Then submit the contents of `C:\Users\Administrator\Desktop\Skills-flag.txt`* | ⚠️ No capturado — las capturas disponibles terminan justo al lanzar el exploit (§4.3), antes de la post-explotación necesaria para leer el fichero |
 
 ### 4.1 Reconocimiento
 
