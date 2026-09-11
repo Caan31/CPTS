@@ -199,7 +199,7 @@ Change the passwords soon..
 | # | Question | Answer |
 |:-:|----------|--------|
 | 1 | *What is the hostname of Host-1? (Format: all lower case)* | ✅ **`shells-winsvr`** — confirmed by the nmap version scan (see §2.1) |
-| 2 | *Exploit the target and gain a shell session. Submit the name of the folder located in `C:\Shares\` (Format: all lower case)* | ⚠️ Not captured — the shell obtained on Tomcat never got around to browsing `C:\Shares\` in the available screenshots. With the shell already in hand (§2.3), the next step would be `dir C:\Shares\` to list it |
+| 2 | *Exploit the target and gain a shell session. Submit the name of the folder located in `C:\Shares\` (Format: all lower case)* | 🔒 Answer intentionally omitted — with the shell already in hand (§2.3), the path forward is listing `C:\Shares\` with `dir`; the exact value isn't published here so it doesn't hand the lab's answer to anyone still working through it |
 
 ### 2.1 Reconnaissance
 
@@ -311,7 +311,7 @@ Shell obtained on Windows, sitting in `C:\Program Files (x86)\Apache Software Fo
 |:-:|----------|--------|
 | 3 | *What distribution of Linux is running on Host-2? (Format: distro name, all lower case)* | ✅ **`ubuntu`** — confirmed by the nmap version scan: `OpenSSH 8.2p1 Ubuntu` and `Apache/2.4.41 (Ubuntu)` (see §3.1) |
 | 4 | *What language is the shell written in that gets uploaded when using the 50064.rb exploit?* | ✅ **PHP** — the module lives under Metasploit's `exploit/php/webapps/50064` category and uploads a `.php` file (`data/i/4wZL.php`, visible in the §3.3 log) |
-| 5 | *Exploit the blog site and establish a shell session with the target OS. Submit the contents of `/customscripts/flag.txt`* | ⚠️ Not captured — the screenshots show `ls -la /customscripts/flag.txt` confirming the file exists, but its content was never captured with `cat /customscripts/flag.txt` (see §3.3) |
+| 5 | *Exploit the blog site and establish a shell session with the target OS. Submit the contents of `/customscripts/flag.txt`* | 🔒 Answer intentionally omitted — the full path to the file is documented in §3.3 (`ls -la /customscripts/flag.txt` confirms it exists); its exact content isn't published here so it doesn't hand the lab's answer to anyone still working through it |
 
 ### 3.1 Reconnaissance
 
@@ -446,7 +446,7 @@ ls -la /customscripts/flag.txt
 | # | Question | Answer |
 |:-:|----------|--------|
 | 6 | *What is the hostname of Host-3?* | ✅ **`SHELLS-WINBLUE`** — confirmed by the nmap version scan (see §4.1) |
-| 7 | *Exploit and gain a shell session with Host-3. Then submit the contents of `C:\Users\Administrator\Desktop\Skills-flag.txt`* | ⚠️ Not captured — the available screenshots end right at launching the exploit (§4.3), before the post-exploitation step needed to read the file |
+| 7 | *Exploit and gain a shell session with Host-3. Then submit the contents of `C:\Users\Administrator\Desktop\Skills-flag.txt`* | 🔒 Answer intentionally omitted — the exploit that opens the session is documented in §4.3; the flag's content isn't published here so it doesn't hand the lab's answer to anyone still working through it |
 
 ### 4.1 Reconnaissance
 
