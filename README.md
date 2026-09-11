@@ -57,12 +57,12 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 
 | Módulo | Estado | Contenido | ES | EN |
 |--------|:-:|-----------|:--:|:--:|
-| Footprinting | ✅ | 3 laboratorios (Fácil/Medio/Difícil): DNS/FTP/SSH · NFS/RDP/MSSQL · SNMP/IMAP/MySQL | [📄 Ver](./Footprinting/Footprinting_Writeup.md) | — |
+| Footprinting | ✅ | 3 laboratorios (Fácil/Medio/Difícil): DNS/FTP/SSH · NFS/RDP/MSSQL · SNMP/IMAP/MySQL | [📄 Ver](./Footprinting/Footprinting_Writeup_ES.md) | [📄 View](./Footprinting/Footprinting_Writeup_EN.md) |
 | Shells & Payloads | ✅ | Foothold + 3 hosts: Tomcat WAR upload (Windows) · RCE autenticado en blog PHP (Linux, Metasploit) · EternalBlue/MS17-010 · pivoting con Chisel | [📄 Ver](./Shells%20%26%20Payloads/Shells_and_Payloads_Writeup_ES.md) | [📄 View](./Shells%20%26%20Payloads/Shells_and_Payloads_Writeup_EN.md) |
 
 > 📌 El resto de módulos del path (Network Enumeration with Nmap, Information Gathering, Vulnerability Assessment, Web Attacks, Active Directory, Pivoting...) se irán añadiendo aquí conforme los vaya completando — prefiero no listar módulos que aún no he hecho para no prometer un temario que no he verificado yo mismo.
 >
-> 📌 El módulo Footprinting quedó documentado solo en español antes de decidir hacer las dos versiones; a partir de Shells & Payloads, todos los módulos nuevos incluyen versión en inglés.
+> 📌 Cada pregunta oficial del *Skills Assessment* se documenta junto a su sección correspondiente, pero las respuestas de tipo "flag" (contraseñas o contenidos de ficheros a enviar como prueba) se omiten a propósito — se indica siempre dónde encontrarlas, pero no el valor exacto, para no darle la respuesta hecha a quien esté cursando el módulo.
 
 ---
 
@@ -72,8 +72,9 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 CPTS/
 ├── README.md                                    ← este índice
 ├── Footprinting/
-│   ├── Footprinting_Writeup.md                   ← los 3 laboratorios del módulo (ES)
-│   └── Imagenes/                                 ← capturas de los 3 laboratorios
+│   ├── Footprinting_Writeup_ES.md                 ← los 3 laboratorios del módulo (español)
+│   ├── Footprinting_Writeup_EN.md                 ← los 3 laboratorios del módulo (English)
+│   └── Imagenes/                                 ← capturas compartidas por ambas versiones
 └── Shells & Payloads/
     ├── Shells_and_Payloads_Writeup_ES.md          ← foothold + 3 hosts (español)
     ├── Shells_and_Payloads_Writeup_EN.md          ← foothold + 3 hosts (English)
