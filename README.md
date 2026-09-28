@@ -23,15 +23,15 @@
 ## `$ whoami`
 
 ```bash
-> Repo      :  CPTS — Cheatsheets y laboratorios personales
+> Repo      :  CPTS — Cheatsheets, laboratorios y máquinas de práctica
 > Autor     :  Arabot
 > Objetivo  :  Preparar y aprobar el HTB Certified Penetration Testing Specialist (CPTS)
-> Formato   :  Notas Obsidian → Markdown limpio para GitHub + writeups de labs con capturas
-> Idioma    :  Español 🇪🇸 + English 🇬🇧 (cada módulo, en dos documentos separados)
+> Formato   :  Notas Obsidian → Markdown limpio para GitHub + writeups con capturas
+> Idioma    :  Español 🇪🇸 + English 🇬🇧 (cada documento, en dos ficheros separados)
 > Estado    :  [ Aprendiendo en público · Siempre en progreso ]
 ```
 
-> Notas y laboratorios organizados por módulo de HTB Academy, pensados para:
+> Notas, laboratorios de HTB Academy y máquinas de práctica adicionales, pensados para:
 > - **Repaso rápido** antes y durante la práctica de cada módulo — y durante el propio examen.
 > - **Material público** para cualquiera preparando el CPTS, en español o en inglés.
 > - **Referencia personal** — documentando la metodología completa y el *porqué* de cada comando/herramienta, no solo el *qué*.
@@ -40,7 +40,7 @@
 
 ## `$ cat sobre_el_cpts.txt`
 
-El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Academy es una certificación práctica centrada en pentesting de infraestructura y aplicaciones web. Se prepara siguiendo el *job-role path* "Penetration Tester" de HTB Academy, módulo a módulo, cada uno con sus propios laboratorios guiados y un *Skills Assessment* final sin pistas.
+El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Academy es una certificación práctica centrada en pentesting de infraestructura y aplicaciones web. Se prepara siguiendo el *job-role path* "Penetration Tester" de HTB Academy, módulo a módulo, cada uno con sus propios laboratorios guiados y un *Skills Assessment* final sin pistas — complementado con la resolución de máquinas reales de HTB para coger soltura fuera del entorno guiado de Academy.
 
 ```
 🎯  Modalidad   →  100% práctico (examen de 10 días + informe profesional)
@@ -66,6 +66,18 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 
 ---
 
+## `$ ls maquinas/`
+
+> Máquinas reales de HTB resueltas como práctica adicional al margen de los módulos guiados de Academy — mismo formato de writeup (capturas, explicación de cada comando/herramienta, glosario), en español e inglés.
+
+| Máquina | SO | Dificultad | Técnicas principales | ES | EN |
+|---------|:--:|:----------:|-----------------------|:--:|:--:|
+| Access | 🪟 | Fácil | FTP anónimo · BD Access (`mdbtools`) · ZIP con contraseña reutilizada · PST (`readpst`) · Telnet · `runas /savecred` cacheado → Administrator | [📄 Ver](./Maquinas/Access/Access_Writeup_ES.md) | [📄 View](./Maquinas/Access/Access_Writeup_EN.md) |
+
+> 📌 Igual que en los módulos, las respuestas de tipo flag (`user.txt`/`root.txt`) se omiten a propósito.
+
+---
+
 ## `$ tree .`
 
 ```
@@ -75,17 +87,22 @@ CPTS/
 │   ├── Footprinting_Writeup_ES.md                 ← los 3 laboratorios del módulo (español)
 │   ├── Footprinting_Writeup_EN.md                 ← los 3 laboratorios del módulo (English)
 │   └── Imagenes/                                 ← capturas compartidas por ambas versiones
-└── Shells & Payloads/
-    ├── Shells_and_Payloads_Writeup_ES.md          ← foothold + 3 hosts (español)
-    ├── Shells_and_Payloads_Writeup_EN.md          ← foothold + 3 hosts (English)
-    └── Imagenes/                                 ← capturas compartidas por ambas versiones
+├── Shells & Payloads/
+│   ├── Shells_and_Payloads_Writeup_ES.md          ← foothold + 3 hosts (español)
+│   ├── Shells_and_Payloads_Writeup_EN.md          ← foothold + 3 hosts (English)
+│   └── Imagenes/                                 ← capturas compartidas por ambas versiones
+└── Maquinas/
+    └── Access/
+        ├── Access_Writeup_ES.md                   ← máquina Access (español)
+        ├── Access_Writeup_EN.md                   ← máquina Access (English)
+        └── Imagenes/                              ← capturas compartidas por ambas versiones
 ```
 
 ---
 
 ## `$ cat metodologia.txt`
 
-Cada writeup de módulo sigue la misma estructura que mis writeups de máquinas de HTB/DockerLabs, con un extra pensado específicamente para el estudio del CPTS: **cada comando y cada herramienta llevan una breve explicación de para qué sirven**, con el símbolo 🛠️, para que el documento funcione también como cheatsheet de repaso y no solo como registro de lo que se hizo.
+Cada writeup (módulo o máquina) sigue la misma estructura, con un extra pensado específicamente para el estudio del CPTS: **cada comando y cada herramienta llevan una breve explicación de para qué sirven**, con el símbolo 🛠️, para que el documento funcione también como cheatsheet de repaso y no solo como registro de lo que se hizo.
 
 ```
 1.  📡  Reconocimiento     →  Nmap (TCP completo + versión/scripts, UDP si aplica)
@@ -97,13 +114,13 @@ Cada writeup de módulo sigue la misma estructura que mis writeups de máquinas 
 7.  🛠️  Glosario           →  tabla resumen de herramientas/comandos usados, para repaso rápido
 ```
 
-> ⚠️ Algunos módulos de HTB Academy (como Footprinting) exigen explícitamente **no explotar agresivamente** los servicios — el objetivo es enumerar y correlacionar información. Otros, como Shells & Payloads, sí requieren explotación activa (esa distinción se indica en cada writeup).
+> ⚠️ Algunos módulos de HTB Academy (como Footprinting) exigen explícitamente **no explotar agresivamente** los servicios — el objetivo es enumerar y correlacionar información. Otros, como Shells & Payloads o las máquinas reales de HTB, sí requieren explotación activa (esa distinción se indica en cada writeup).
 
 ---
 
 ## `$ cat aviso.txt`
 
-> ⚠️ **Material de estudio personal.** Las técnicas descritas solo deben usarse contra los laboratorios oficiales de **HTB Academy** o sistemas para los que se tenga autorización explícita por escrito. El uso contra sistemas de terceros sin permiso es **ilegal**.
+> ⚠️ **Material de estudio personal.** Las técnicas descritas solo deben usarse contra los laboratorios oficiales de **HTB Academy**, máquinas **retiradas** de Hack The Box, o sistemas para los que se tenga autorización explícita por escrito. El uso contra sistemas de terceros sin permiso es **ilegal**.
 
 ---
 
