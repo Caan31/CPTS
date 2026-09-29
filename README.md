@@ -68,11 +68,12 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 
 ## `$ ls maquinas/`
 
-> Máquinas reales de HTB resueltas como práctica adicional al margen de los módulos guiados de Academy — mismo formato de writeup (capturas, explicación de cada comando/herramienta, glosario), en español e inglés.
+> Máquinas reales de HTB resueltas como práctica adicional al margen de los módulos guiados de Academy — mismo formato de writeup (capturas, explicación de cada comando/herramienta, glosario), en español e inglés. Estas mismas máquinas también se publican, en versión solo-español y con el formato estándar de writeup, en el repositorio [HackTheBox-Writeups-by-Arabot](https://github.com/Caan31/-HackTheBox-Writeups-by-Arabot).
 
 | Máquina | SO | Dificultad | Técnicas principales | ES | EN |
 |---------|:--:|:----------:|-----------------------|:--:|:--:|
 | Access | 🪟 | Fácil | FTP anónimo · BD Access (`mdbtools`) · ZIP con contraseña reutilizada · PST (`readpst`) · Telnet · `runas /savecred` cacheado → Administrator | [📄 Ver](./Maquinas/Access/Access_Writeup_ES.md) | [📄 View](./Maquinas/Access/Access_Writeup_EN.md) |
+| Delivery | 🐧 | Fácil | osTicket · Mattermost · Verificación de email vía ticket de soporte (buzón cruzado) · Credenciales filtradas en chat interno · LinPEAS · `config.json` de Mattermost · MySQL · Hashcat (`best66`) + John → root | [📄 Ver](./Maquinas/Delivery/Delivery_Writeup_ES.md) | [📄 View](./Maquinas/Delivery/Delivery_Writeup_EN.md) |
 
 > 📌 Igual que en los módulos, las respuestas de tipo flag (`user.txt`/`root.txt`) se omiten a propósito.
 
@@ -92,9 +93,13 @@ CPTS/
 │   ├── Shells_and_Payloads_Writeup_EN.md          ← foothold + 3 hosts (English)
 │   └── Imagenes/                                 ← capturas compartidas por ambas versiones
 └── Maquinas/
-    └── Access/
-        ├── Access_Writeup_ES.md                   ← máquina Access (español)
-        ├── Access_Writeup_EN.md                   ← máquina Access (English)
+    ├── Access/
+    │   ├── Access_Writeup_ES.md                   ← máquina Access (español)
+    │   ├── Access_Writeup_EN.md                   ← máquina Access (English)
+    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
+    └── Delivery/
+        ├── Delivery_Writeup_ES.md                 ← máquina Delivery (español)
+        ├── Delivery_Writeup_EN.md                 ← máquina Delivery (English)
         └── Imagenes/                              ← capturas compartidas por ambas versiones
 ```
 
