@@ -74,6 +74,7 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 |---------|:--:|:----------:|-----------------------|:--:|:--:|
 | Access | 🪟 | Fácil | FTP anónimo · BD Access (`mdbtools`) · ZIP con contraseña reutilizada · PST (`readpst`) · Telnet · `runas /savecred` cacheado → Administrator | [📄 Ver](./Maquinas/Access/Access_Writeup_ES.md) | [📄 View](./Maquinas/Access/Access_Writeup_EN.md) |
 | Delivery | 🐧 | Fácil | osTicket · Mattermost · Verificación de email vía ticket de soporte (buzón cruzado) · Credenciales filtradas en chat interno · LinPEAS · `config.json` de Mattermost · MySQL · Hashcat (`best66`) + John → root | [📄 Ver](./Maquinas/Delivery/Delivery_Writeup_ES.md) | [📄 View](./Maquinas/Delivery/Delivery_Writeup_EN.md) |
+| Driver | 🪟 | Fácil | Credenciales por defecto · Fichero `.scf` → captura de hash NTLMv2 con Responder · John · Evil-WinRM · WinPEAS · **PrintNightmare (CVE-2021-1675)** → Administrator | [📄 Ver](./Maquinas/Driver/Driver_Writeup_ES.md) | [📄 View](./Maquinas/Driver/Driver_Writeup_EN.md) |
 
 > 📌 Igual que en los módulos, las respuestas de tipo flag (`user.txt`/`root.txt`) se omiten a propósito.
 
@@ -97,9 +98,13 @@ CPTS/
     │   ├── Access_Writeup_ES.md                   ← máquina Access (español)
     │   ├── Access_Writeup_EN.md                   ← máquina Access (English)
     │   └── Imagenes/                              ← capturas compartidas por ambas versiones
-    └── Delivery/
-        ├── Delivery_Writeup_ES.md                 ← máquina Delivery (español)
-        ├── Delivery_Writeup_EN.md                 ← máquina Delivery (English)
+    ├── Delivery/
+    │   ├── Delivery_Writeup_ES.md                 ← máquina Delivery (español)
+    │   ├── Delivery_Writeup_EN.md                 ← máquina Delivery (English)
+    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
+    └── Driver/
+        ├── Driver_Writeup_ES.md                   ← máquina Driver (español)
+        ├── Driver_Writeup_EN.md                   ← máquina Driver (English)
         └── Imagenes/                              ← capturas compartidas por ambas versiones
 ```
 
