@@ -76,6 +76,7 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 | Delivery | 🐧 | Fácil | osTicket · Mattermost · Verificación de email vía ticket de soporte (buzón cruzado) · Credenciales filtradas en chat interno · LinPEAS · `config.json` de Mattermost · MySQL · Hashcat (`best66`) + John → root | [📄 Ver](./Maquinas/Delivery/Delivery_Writeup_ES.md) | [📄 View](./Maquinas/Delivery/Delivery_Writeup_EN.md) |
 | Driver | 🪟 | Fácil | Credenciales por defecto · Fichero `.scf` → captura de hash NTLMv2 con Responder · John · Evil-WinRM · WinPEAS · **PrintNightmare (CVE-2021-1675)** → Administrator | [📄 Ver](./Maquinas/Driver/Driver_Writeup_ES.md) | [📄 View](./Maquinas/Driver/Driver_Writeup_EN.md) |
 | Fluffy | 🪟 | Fácil | Active Directory (`fluffy.htb`) · **CVE-2025-24071** (fuga NTLM vía `.library-ms`) · Responder · Hashcat · Abuso de ACLs (`bloodyAD`) · **Shadow Credentials** (`certipy-ad`) · Evil-WinRM · **ESC16** (ADCS) → Administrator | [📄 Ver](./Maquinas/Fluffy/Fluffy_Writeup_ES.md) | [📄 View](./Maquinas/Fluffy/Fluffy_Writeup_EN.md) |
+| Return | 🪟 | Fácil | Active Directory (`return.local`) · Panel web de impresora con LDAP manipulable · Captura de credenciales en claro con `nc` · Evil-WinRM · Grupo **Server Operators** · **Service hijacking** (`VGAuthService`) → SYSTEM | [📄 Ver](./Maquinas/Return/Return_Writeup_ES.md) | [📄 View](./Maquinas/Return/Return_Writeup_EN.md) |
 
 > 📌 Igual que en los módulos, las respuestas de tipo flag (`user.txt`/`root.txt`) se omiten a propósito.
 
@@ -107,9 +108,13 @@ CPTS/
     │   ├── Driver_Writeup_ES.md                   ← máquina Driver (español)
     │   ├── Driver_Writeup_EN.md                   ← máquina Driver (English)
     │   └── Imagenes/                              ← capturas compartidas por ambas versiones
-    └── Fluffy/
-        ├── Fluffy_Writeup_ES.md                   ← máquina Fluffy (español)
-        ├── Fluffy_Writeup_EN.md                   ← máquina Fluffy (English)
+    ├── Fluffy/
+    │   ├── Fluffy_Writeup_ES.md                   ← máquina Fluffy (español)
+    │   ├── Fluffy_Writeup_EN.md                   ← máquina Fluffy (English)
+    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
+    └── Return/
+        ├── Return_Writeup_ES.md                   ← máquina Return (español)
+        ├── Return_Writeup_EN.md                   ← máquina Return (English)
         └── Imagenes/                              ← capturas compartidas por ambas versiones
 ```
 
