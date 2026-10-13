@@ -78,6 +78,7 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 | Fluffy | 🪟 | Fácil | Active Directory (`fluffy.htb`) · **CVE-2025-24071** (fuga NTLM vía `.library-ms`) · Responder · Hashcat · Abuso de ACLs (`bloodyAD`) · **Shadow Credentials** (`certipy-ad`) · Evil-WinRM · **ESC16** (ADCS) → Administrator | [📄 Ver](./Maquinas/Fluffy/Fluffy_Writeup_ES.md) | [📄 View](./Maquinas/Fluffy/Fluffy_Writeup_EN.md) |
 | Return | 🪟 | Fácil | Active Directory (`return.local`) · Panel web de impresora con LDAP manipulable · Captura de credenciales en claro con `nc` · Evil-WinRM · Grupo **Server Operators** · **Service hijacking** (`VGAuthService`) → SYSTEM | [📄 Ver](./Maquinas/Return/Return_Writeup_ES.md) | [📄 View](./Maquinas/Return/Return_Writeup_EN.md) |
 | Sauna | 🪟 | Fácil | Active Directory (`EGOTISTICAL-BANK.LOCAL`) · Enumeración LDAP anónima · OSINT web · `kerbrute` · **AS-REP Roasting** (`GetNPUsers`) · AutoLogon (WinPEAS) · BloodHound · **DCSync** (`secretsdump`) → SYSTEM | [📄 Ver](./Maquinas/Sauna/Sauna_Writeup_ES.md) | [📄 View](./Maquinas/Sauna/Sauna_Writeup_EN.md) |
+| Trick | 🐧 | Fácil | Transferencia de zona DNS (AXFR) · **SQL Injection** en login · Credencial expuesta vía DevTools · Fuzzing de subdominios (`wfuzz`) · **LFI** (traversal `....//`) → clave SSH · Abuso de `sudo` sobre `fail2ban` → root | [📄 Ver](./Maquinas/Trick/Trick_Writeup_ES.md) | [📄 View](./Maquinas/Trick/Trick_Writeup_EN.md) |
 
 > 📌 Igual que en los módulos, las respuestas de tipo flag (`user.txt`/`root.txt`) se omiten a propósito.
 
@@ -117,9 +118,13 @@ CPTS/
     │   ├── Return_Writeup_ES.md                   ← máquina Return (español)
     │   ├── Return_Writeup_EN.md                   ← máquina Return (English)
     │   └── Imagenes/                              ← capturas compartidas por ambas versiones
-    └── Sauna/
-        ├── Sauna_Writeup_ES.md                    ← máquina Sauna (español)
-        ├── Sauna_Writeup_EN.md                    ← máquina Sauna (English)
+    ├── Sauna/
+    │   ├── Sauna_Writeup_ES.md                    ← máquina Sauna (español)
+    │   ├── Sauna_Writeup_EN.md                    ← máquina Sauna (English)
+    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
+    └── Trick/
+        ├── Trick_Writeup_ES.md                    ← máquina Trick (español)
+        ├── Trick_Writeup_EN.md                    ← máquina Trick (English)
         └── Imagenes/                              ← capturas compartidas por ambas versiones
 ```
 
