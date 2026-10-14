@@ -73,6 +73,7 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 | Máquina | SO | Dificultad | Técnicas principales | ES | EN |
 |---------|:--:|:----------:|-----------------------|:--:|:--:|
 | Access | 🪟 | Fácil | FTP anónimo · BD Access (`mdbtools`) · ZIP con contraseña reutilizada · PST (`readpst`) · Telnet · `runas /savecred` cacheado → Administrator | [📄 Ver](./Maquinas/Access/Access_Writeup_ES.md) | [📄 View](./Maquinas/Access/Access_Writeup_EN.md) |
+| Active | 🪟 | Fácil | SMB anónimo (share `Replication`) · **GPP cpassword** (`Groups.xml` + `gpp-decrypt`) · **Kerberoasting** (`GetUserSPNs`) sobre el SPN de Administrator · John · Pass-the-password (`psexec`) → SYSTEM | [📄 Ver](./Maquinas/Active/Active_Writeup_ES.md) | [📄 View](./Maquinas/Active/Active_Writeup_EN.md) |
 | Delivery | 🐧 | Fácil | osTicket · Mattermost · Verificación de email vía ticket de soporte (buzón cruzado) · Credenciales filtradas en chat interno · LinPEAS · `config.json` de Mattermost · MySQL · Hashcat (`best66`) + John → root | [📄 Ver](./Maquinas/Delivery/Delivery_Writeup_ES.md) | [📄 View](./Maquinas/Delivery/Delivery_Writeup_EN.md) |
 | Driver | 🪟 | Fácil | Credenciales por defecto · Fichero `.scf` → captura de hash NTLMv2 con Responder · John · Evil-WinRM · WinPEAS · **PrintNightmare (CVE-2021-1675)** → Administrator | [📄 Ver](./Maquinas/Driver/Driver_Writeup_ES.md) | [📄 View](./Maquinas/Driver/Driver_Writeup_EN.md) |
 | Fluffy | 🪟 | Fácil | Active Directory (`fluffy.htb`) · **CVE-2025-24071** (fuga NTLM vía `.library-ms`) · Responder · Hashcat · Abuso de ACLs (`bloodyAD`) · **Shadow Credentials** (`certipy-ad`) · Evil-WinRM · **ESC16** (ADCS) → Administrator | [📄 Ver](./Maquinas/Fluffy/Fluffy_Writeup_ES.md) | [📄 View](./Maquinas/Fluffy/Fluffy_Writeup_EN.md) |
@@ -101,6 +102,10 @@ CPTS/
     ├── Access/
     │   ├── Access_Writeup_ES.md                   ← máquina Access (español)
     │   ├── Access_Writeup_EN.md                   ← máquina Access (English)
+    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
+    ├── Active/
+    │   ├── Active_Writeup_ES.md                   ← máquina Active (español)
+    │   ├── Active_Writeup_EN.md                   ← máquina Active (English)
     │   └── Imagenes/                              ← capturas compartidas por ambas versiones
     ├── Delivery/
     │   ├── Delivery_Writeup_ES.md                 ← máquina Delivery (español)
@@ -132,7 +137,10 @@ CPTS/
 
 ## `$ cat metodologia.txt`
 
-Cada writeup (módulo o máquina) sigue la misma estructura, con un extra pensado específicamente para el estudio del CPTS: **cada comando y cada herramienta llevan una breve explicación de para qué sirven**, con el símbolo 🛠️, para que el documento funcione también como cheatsheet de repaso y no solo como registro de lo que se hizo.
+Cada writeup (módulo o máquina) sigue la misma estructura, con dos extras pensados específicamente para el estudio del CPTS:
+
+- **Cada comando y cada herramienta llevan una breve explicación de para qué sirven**, con el símbolo 🛠️, para que el documento funcione también como cheatsheet de repaso y no solo como registro de lo que se hizo.
+- **Las máquinas con una técnica central no trivial** (p. ej. Kerberoasting, DCSync, GPP cpassword) cierran con un **diagrama de flujo de la metodología** (bloque Mermaid, renderizable tanto en GitHub como en Obsidian) que explica el árbol de decisión de esa técnica — no solo los comandos ejecutados, sino el *por qué* de cada comprobación.
 
 ```
 1.  📡  Reconocimiento     →  Nmap (TCP completo + versión/scripts, UDP si aplica)
@@ -142,6 +150,7 @@ Cada writeup (módulo o máquina) sigue la misma estructura, con un extra pensad
 5.  🎒  Post-explotación   →  localizar y acreditar la prueba pedida (flag/credencial)
 6.  📋  Lección aprendida  →  qué falló y cómo se mitigaría en un entorno real
 7.  🛠️  Glosario           →  tabla resumen de herramientas/comandos usados, para repaso rápido
+8.  🧭  Flujo de ataque    →  diagrama de decisión de la técnica central (cuando aplica)
 ```
 
 > ⚠️ Algunos módulos de HTB Academy (como Footprinting) exigen explícitamente **no explotar agresivamente** los servicios — el objetivo es enumerar y correlacionar información. Otros, como Shells & Payloads o las máquinas reales de HTB, sí requieren explotación activa (esa distinción se indica en cada writeup).
