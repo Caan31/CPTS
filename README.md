@@ -1,3 +1,4 @@
+
 <div align="center">
 
 ```
@@ -66,6 +67,26 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 
 ---
 
+## `$ ls cheatsheets/`
+
+> A diferencia de `$ ls modulos/` (writeups completos de un laboratorio o Skills Assessment resuelto, con capturas y narrativa paso a paso), esto es **material de referencia rápida**: los cheatsheets de comandos, tablas, callouts y metodología que mantengo en mis apuntes de Obsidian mientras curso cada módulo, exportados tal cual a Markdown — sin capturas ni relato de "qué hice en qué máquina". Útil para repasar un módulo entero en dos minutos antes de atacarlo en el examen.
+>
+> Por ahora solo en español; la versión en inglés se añadirá más adelante.
+
+| Módulo | Contenido | Cheatsheet |
+|--------|-----------|:--:|
+| Network Enumeration with Nmap | Descubrimiento de hosts, técnicas de escaneo, scripts NSE | [📄 Ver](./Cheatsheets/Network%20Enumeration%20with%20Nmap/Nmap_Cheatsheet_ES.md) |
+| Footprinting | Enumeración por servicio: FTP, SMB, DNS, bases de datos, correo, gestión remota | [📄 Ver](./Cheatsheets/Footprinting/Footprinting_Cheatsheet_ES.md) |
+| Attacking Common Services | Explotación de lo enumerado: FTP/SMB/SQL/RDP/DNS/correo — malas configuraciones, fuerza bruta, RCE | [📄 Ver](./Cheatsheets/Attacking%20Common%20Services/Attacking_Common_Services_Cheatsheet_ES.md) |
+| Information Gathering - Web Edition | WHOIS, DNS/subdominios, fingerprinting, crawling, VHosts | [📄 Ver](./Cheatsheets/Information%20Gathering%20Web%20Edition/Information_Gathering_Web_Cheatsheet_ES.md) |
+| File Transfers | Transferencia de ficheros Linux/Windows, cifrado, evasión de detección | [📄 Ver](./Cheatsheets/File%20Transfers/File_Transfers_Cheatsheet_ES.md) |
+| Shells & Payloads | Reverse/bind shells, MSFvenom, web/NIX shells, vulnerabilidades clásicas de Windows | [📄 Ver](./Cheatsheets/Shells%20%26%20Payloads/Shells_and_Payloads_Cheatsheet_ES.md) |
+| Using the Metasploit Framework | Módulos, payloads/encoders, Meterpreter, pivoting con Metasploit | [📄 Ver](./Cheatsheets/Metasploit/Metasploit_Cheatsheet_ES.md) |
+| Password Attacks | Crackeo (John/Hashcat), ataques remotos, extracción de credenciales, movimiento lateral (PtH/PtT/PtC) | [📄 Ver](./Cheatsheets/Password%20Attacks/Password_Attacks_Cheatsheet_ES.md) |
+| Pivoting, Tunneling, and Port Forwarding | SSH (-L/-D/-R), sshuttle, pivoting con Metasploit, Chisel/Socat, pivoting desde Windows, túneles de último recurso | [📄 Ver](./Cheatsheets/Pivoting%2C%20Tunneling%2C%20and%20Port%20Forwarding/Pivoting_Tunneling_Cheatsheet_ES.md) |
+
+---
+
 ## `$ ls maquinas/`
 
 > Máquinas reales de HTB resueltas como práctica adicional al margen de los módulos guiados de Academy — mismo formato de writeup (capturas, explicación de cada comando/herramienta, glosario), en español e inglés. Estas mismas máquinas también se publican, en versión solo-español y con el formato estándar de writeup, en el repositorio [HackTheBox-Writeups-by-Arabot](https://github.com/Caan31/-HackTheBox-Writeups-by-Arabot).
@@ -74,7 +95,6 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 |---------|:--:|:----------:|-----------------------|:--:|:--:|
 | Access | 🪟 | Fácil | FTP anónimo · BD Access (`mdbtools`) · ZIP con contraseña reutilizada · PST (`readpst`) · Telnet · `runas /savecred` cacheado → Administrator | [📄 Ver](./Maquinas/Access/Access_Writeup_ES.md) | [📄 View](./Maquinas/Access/Access_Writeup_EN.md) |
 | Active | 🪟 | Fácil | SMB anónimo (share `Replication`) · **GPP cpassword** (`Groups.xml` + `gpp-decrypt`) · **Kerberoasting** (`GetUserSPNs`) sobre el SPN de Administrator · John · Pass-the-password (`psexec`) → SYSTEM | [📄 Ver](./Maquinas/Active/Active_Writeup_ES.md) | [📄 View](./Maquinas/Active/Active_Writeup_EN.md) |
-| Baby | 🪟 | Fácil | Enumeración LDAP anónima · Contraseña inicial filtrada en `description` de grupo · Password spraying · Reset de contraseña caducada · Abuso de **`SeBackupPrivilege`** (Backup Operators) · **Shadow Copy** (`diskshadow`) → `ntds.dit` · `secretsdump` → SYSTEM | [📄 Ver](./Maquinas/Baby/Baby_Writeup_ES.md) | [📄 View](./Maquinas/Baby/Baby_Writeup_EN.md) |
 | Craft | 🐧 | Media | Subdominios (`api`/`gogs.craft.htb`) · Minería de historial de commits en Gogs → credenciales filtradas + **inyección `eval()`** en API REST · Pivote a MySQL vía script en base64 · Clave SSH filtrada en repo privado · **HashiCorp Vault** (rol SSH OTP `root_otp`) → root | [📄 Ver](./Maquinas/Craft/Craft_Writeup_ES.md) | [📄 View](./Maquinas/Craft/Craft_Writeup_EN.md) |
 | Delivery | 🐧 | Fácil | osTicket · Mattermost · Verificación de email vía ticket de soporte (buzón cruzado) · Credenciales filtradas en chat interno · LinPEAS · `config.json` de Mattermost · MySQL · Hashcat (`best66`) + John → root | [📄 Ver](./Maquinas/Delivery/Delivery_Writeup_ES.md) | [📄 View](./Maquinas/Delivery/Delivery_Writeup_EN.md) |
 | Driver | 🪟 | Fácil | Credenciales por defecto · Fichero `.scf` → captura de hash NTLMv2 con Responder · John · Evil-WinRM · WinPEAS · **PrintNightmare (CVE-2021-1675)** → Administrator | [📄 Ver](./Maquinas/Driver/Driver_Writeup_ES.md) | [📄 View](./Maquinas/Driver/Driver_Writeup_EN.md) |
@@ -92,6 +112,25 @@ El **HTB Certified Penetration Testing Specialist (CPTS)** de Hack The Box Acade
 ```
 CPTS/
 ├── README.md                                    ← este índice
+├── Cheatsheets/                                 ← cheatsheets de referencia (sin capturas, ES por ahora)
+│   ├── Network Enumeration with Nmap/
+│   │   └── Nmap_Cheatsheet_ES.md
+│   ├── Footprinting/
+│   │   └── Footprinting_Cheatsheet_ES.md
+│   ├── Attacking Common Services/
+│   │   └── Attacking_Common_Services_Cheatsheet_ES.md
+│   ├── Information Gathering Web Edition/
+│   │   └── Information_Gathering_Web_Cheatsheet_ES.md
+│   ├── File Transfers/
+│   │   └── File_Transfers_Cheatsheet_ES.md
+│   ├── Shells & Payloads/
+│   │   └── Shells_and_Payloads_Cheatsheet_ES.md
+│   ├── Metasploit/
+│   │   └── Metasploit_Cheatsheet_ES.md
+│   ├── Password Attacks/
+│   │   └── Password_Attacks_Cheatsheet_ES.md
+│   └── Pivoting, Tunneling, and Port Forwarding/
+│       └── Pivoting_Tunneling_Cheatsheet_ES.md
 ├── Footprinting/
 │   ├── Footprinting_Writeup_ES.md                 ← los 3 laboratorios del módulo (español)
 │   ├── Footprinting_Writeup_EN.md                 ← los 3 laboratorios del módulo (English)
@@ -108,10 +147,6 @@ CPTS/
     ├── Active/
     │   ├── Active_Writeup_ES.md                   ← máquina Active (español)
     │   ├── Active_Writeup_EN.md                   ← máquina Active (English)
-    │   └── Imagenes/                              ← capturas compartidas por ambas versiones
-    ├── Baby/
-    │   ├── Baby_Writeup_ES.md                     ← máquina Baby (español)
-    │   ├── Baby_Writeup_EN.md                     ← máquina Baby (English)
     │   └── Imagenes/                              ← capturas compartidas por ambas versiones
     ├── Craft/
     │   ├── Craft_Writeup_ES.md                    ← máquina Craft (español)
